@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RBSYNERGYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblBarCodeInv">
+    <Key>
+      <PropertyRef Name="RecID" />
+    </Key>
+    <Property Name="RecID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrintDate" Type="datetime" Nullable="false" />
+    <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="varchar" MaxLength="50" />
+    <Property Name="BarCode" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="BarCode2" Type="varchar" MaxLength="500" />
+    <Property Name="DelieveredTo" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="PrintSuccess" Type="bit" Nullable="false" />
+    <Property Name="AddedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="Updatedby" Type="varchar" MaxLength="50" />
+    <Property Name="DateUpdated" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblDealerInfo">
+    <Key>
+      <PropertyRef Name="DealerId" />
+    </Key>
+    <Property Name="DealerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DealerCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DealerName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DealerAddress" Type="varchar" MaxLength="150" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Division" Type="varchar" MaxLength="50" />
+    <Property Name="DealerPhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="AddedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="DealerType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="RBSYNERGYModelStoreContainer">
+    <EntitySet Name="tblBarCodeInv" EntityType="Self.tblBarCodeInv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDealerInfo" EntityType="Self.tblDealerInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

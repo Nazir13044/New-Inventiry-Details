@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WCMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblBarCodeInv">
+    <Key>
+      <PropertyRef Name="RecID" />
+    </Key>
+    <Property Name="RecID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrintDate" Type="datetime" Nullable="false" />
+    <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="varchar" MaxLength="50" />
+    <Property Name="BarCode" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="BarCode2" Type="varchar" MaxLength="500" />
+    <Property Name="DelieveredTo" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="PrintSuccess" Type="bit" Nullable="false" />
+    <Property Name="AddedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="Updatedby" Type="varchar" MaxLength="50" />
+    <Property Name="DateUpdated" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tblColors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblIMEI">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMEI1" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMEI2" Type="nvarchar" MaxLength="100" />
+    <Property Name="WO" Type="nvarchar" MaxLength="200" />
+    <Property Name="Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="EanCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sn" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Wifi" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSn" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsInventoryIn" Type="bit" />
+    <Property Name="IsInventoryOut" Type="bit" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblIMEIRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMEI1" Type="nvarchar" MaxLength="100" />
+    <Property Name="IMEI2" Type="nvarchar" MaxLength="100" />
+    <Property Name="WO" Type="nvarchar" MaxLength="200" />
+    <Property Name="Project" Type="nvarchar" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="EanCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sn" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Wifi" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSn" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblNewBarCodeInven">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IMEI1" Type="nvarchar" MaxLength="50" />
+    <Property Name="IMEI2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="WCMSModelStoreContainer">
+    <EntitySet Name="tblBarCodeInv" EntityType="Self.tblBarCodeInv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblColors" EntityType="Self.tblColors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblIMEI" EntityType="Self.tblIMEI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblIMEIRecord" EntityType="Self.tblIMEIRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblModel" EntityType="Self.tblModel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNewBarCodeInven" EntityType="Self.tblNewBarCodeInven" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

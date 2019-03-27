@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WCMSModelStoreContainer" CdmEntityContainer="WCMSEntities">
+    <EntitySetMapping Name="tblBarCodeInvs">
+      <EntityTypeMapping TypeName="WCMSModel.tblBarCodeInv">
+        <MappingFragment StoreEntitySet="tblBarCodeInv">
+          <ScalarProperty Name="RecID" ColumnName="RecID" />
+          <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="BarCode2" ColumnName="BarCode2" />
+          <ScalarProperty Name="DelieveredTo" ColumnName="DelieveredTo" />
+          <ScalarProperty Name="PrintSuccess" ColumnName="PrintSuccess" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblColors">
+      <EntityTypeMapping TypeName="WCMSModel.tblColor">
+        <MappingFragment StoreEntitySet="tblColors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblIMEIRecords">
+      <EntityTypeMapping TypeName="WCMSModel.tblIMEIRecord">
+        <MappingFragment StoreEntitySet="tblIMEIRecord">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="IMEI1" ColumnName="IMEI1" />
+          <ScalarProperty Name="IMEI2" ColumnName="IMEI2" />
+          <ScalarProperty Name="WO" ColumnName="WO" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="EanCode" ColumnName="EanCode" />
+          <ScalarProperty Name="Sn" ColumnName="Sn" />
+          <ScalarProperty Name="Bt" ColumnName="Bt" />
+          <ScalarProperty Name="Wifi" ColumnName="Wifi" />
+          <ScalarProperty Name="SubSn" ColumnName="SubSn" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblModels">
+      <EntityTypeMapping TypeName="WCMSModel.tblModel">
+        <MappingFragment StoreEntitySet="tblModel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInventoryForServiceItems">
+      <EntityTypeMapping TypeName="WCMSModel.tblInventoryForServiceItem">
+        <MappingFragment StoreEntitySet="tblInventoryForServiceItems">
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="IsInventoryOutDate" ColumnName="IsInventoryOutDate" />
+          <ScalarProperty Name="IsInventoryOut" ColumnName="IsInventoryOut" />
+          <ScalarProperty Name="IsInventoryInDate" ColumnName="IsInventoryInDate" />
+          <ScalarProperty Name="IsInventoryIn" ColumnName="IsInventoryIn" />
+          <ScalarProperty Name="SubSn" ColumnName="SubSn" />
+          <ScalarProperty Name="Wifi" ColumnName="Wifi" />
+          <ScalarProperty Name="Bt" ColumnName="Bt" />
+          <ScalarProperty Name="Sn" ColumnName="Sn" />
+          <ScalarProperty Name="EanCode" ColumnName="EanCode" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Project" ColumnName="Project" />
+          <ScalarProperty Name="WO" ColumnName="WO" />
+          <ScalarProperty Name="IMEI2" ColumnName="IMEI2" />
+          <ScalarProperty Name="IMEI1" ColumnName="IMEI1" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

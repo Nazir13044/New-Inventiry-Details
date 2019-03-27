@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WCMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblBarCodeInv">
+    <Key>
+      <PropertyRef Name="RecID" />
+    </Key>
+    <Property Name="RecID" Type="Guid" Nullable="false" />
+    <Property Name="PrintDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BarCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BarCode2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DelieveredTo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrintSuccess" Type="Boolean" Nullable="false" />
+    <Property Name="AddedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updatedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateUpdated" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblColor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblIMEIRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Project" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EanCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Wifi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubSn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="WCMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblBarCodeInvs" EntityType="Self.tblBarCodeInv" />
+    <EntitySet Name="tblColors" EntityType="Self.tblColor" />
+    <EntitySet Name="tblIMEIRecords" EntityType="Self.tblIMEIRecord" />
+    <EntitySet Name="tblModels" EntityType="Self.tblModel" />
+    <EntitySet Name="tblInventoryForServiceItems" EntityType="WCMSModel.tblInventoryForServiceItem" />
+  </EntityContainer>
+  <EntityType Name="tblInventoryForServiceItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IMEI2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Project" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EanCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Wifi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubSn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsInventoryIn" Type="Boolean" />
+    <Property Name="IsInventoryInDate" Type="DateTime" Precision="3" />
+    <Property Name="IsInventoryOut" Type="Boolean" />
+    <Property Name="IsInventoryOutDate" Type="DateTime" Precision="3" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

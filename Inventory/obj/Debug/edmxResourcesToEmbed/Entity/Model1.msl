@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RBSYNERGYModelStoreContainer" CdmEntityContainer="RBSYNERGYEntities">
+    <EntitySetMapping Name="tblBarCodeInvs">
+      <EntityTypeMapping TypeName="RBSYNERGYModel.tblBarCodeInv">
+        <MappingFragment StoreEntitySet="tblBarCodeInv">
+          <ScalarProperty Name="RecID" ColumnName="RecID" />
+          <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="BarCode2" ColumnName="BarCode2" />
+          <ScalarProperty Name="DelieveredTo" ColumnName="DelieveredTo" />
+          <ScalarProperty Name="PrintSuccess" ColumnName="PrintSuccess" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDealerInfoes">
+      <EntityTypeMapping TypeName="RBSYNERGYModel.tblDealerInfo">
+        <MappingFragment StoreEntitySet="tblDealerInfo">
+          <ScalarProperty Name="DealerType" ColumnName="DealerType" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+          <ScalarProperty Name="DealerPhoneNumber" ColumnName="DealerPhoneNumber" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+          <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+          <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+          <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

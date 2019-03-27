@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RBSYNERGYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblBarCodeInv">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrintDate" Type="datetime" Nullable="false" />
+          <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="50" />
+          <Property Name="BarCode" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="BarCode2" Type="varchar" MaxLength="500" />
+          <Property Name="DelieveredTo" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="PrintSuccess" Type="bit" Nullable="false" />
+          <Property Name="AddedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateAdded" Type="datetime" Nullable="false" />
+          <Property Name="Updatedby" Type="varchar" MaxLength="50" />
+          <Property Name="DateUpdated" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tblDealerInfo">
+          <Key>
+            <PropertyRef Name="DealerId" />
+          </Key>
+          <Property Name="DealerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DealerCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DealerName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DealerAddress" Type="varchar" MaxLength="150" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Division" Type="varchar" MaxLength="50" />
+          <Property Name="DealerPhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="AddedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateAdded" Type="datetime" Nullable="false" />
+          <Property Name="DealerType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="RBSYNERGYModelStoreContainer">
+          <EntitySet Name="tblBarCodeInv" EntityType="Self.tblBarCodeInv" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDealerInfo" EntityType="Self.tblDealerInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RBSYNERGYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblBarCodeInv">
+          <Key>
+            <PropertyRef Name="RecID" />
+          </Key>
+          <Property Name="RecID" Type="Guid" Nullable="false" />
+          <Property Name="PrintDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ProductType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BarCode" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BarCode2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DelieveredTo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrintSuccess" Type="Boolean" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Updatedby" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdated" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="RBSYNERGYEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblBarCodeInvs" EntityType="Self.tblBarCodeInv" />
+          <EntitySet Name="tblDealerInfoes" EntityType="RBSYNERGYModel.tblDealerInfo" />
+        </EntityContainer>
+        <EntityType Name="tblDealerInfo">
+          <Key>
+            <PropertyRef Name="DealerId" />
+          </Key>
+          <Property Name="DealerId" Type="Guid" Nullable="false" />
+          <Property Name="DealerCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DealerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DealerAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Division" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DealerPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DealerType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RBSYNERGYModelStoreContainer" CdmEntityContainer="RBSYNERGYEntities">
+          <EntitySetMapping Name="tblBarCodeInvs">
+            <EntityTypeMapping TypeName="RBSYNERGYModel.tblBarCodeInv">
+              <MappingFragment StoreEntitySet="tblBarCodeInv">
+                <ScalarProperty Name="RecID" ColumnName="RecID" />
+                <ScalarProperty Name="PrintDate" ColumnName="PrintDate" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+                <ScalarProperty Name="BarCode2" ColumnName="BarCode2" />
+                <ScalarProperty Name="DelieveredTo" ColumnName="DelieveredTo" />
+                <ScalarProperty Name="PrintSuccess" ColumnName="PrintSuccess" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Updatedby" ColumnName="Updatedby" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDealerInfoes">
+            <EntityTypeMapping TypeName="RBSYNERGYModel.tblDealerInfo">
+              <MappingFragment StoreEntitySet="tblDealerInfo">
+                <ScalarProperty Name="DealerType" ColumnName="DealerType" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="DealerPhoneNumber" ColumnName="DealerPhoneNumber" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="DealerAddress" ColumnName="DealerAddress" />
+                <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+                <ScalarProperty Name="DealerCode" ColumnName="DealerCode" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

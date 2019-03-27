@@ -1,0 +1,14 @@
+Third Largest Value
+
+Select Min(MovId) from (select top 3 MovId  from tblMovies order by MovId desc)a
+
+
+GETDATE
+
+select GETDATE()
+select CAST(GETDATe() as date)
+select CAST(GETDATE() as time)
+
+Concate Two Table
+
+select CONCAT("Id",' ',"MovId") from tblMovies

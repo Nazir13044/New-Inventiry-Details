@@ -1,0 +1,358 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    table thead tr {
+        background-color: darkslategray;
+        color: whitesmoke;
+        font-weight: bold;
+    }
+
+    table tbody tr {
+        color: #2F4F4F;
+        font-weight: bold;
+    }
+
+    .tbody { }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card" id="card" style="overflow-y: auto">
+                <div class="card-close">
+
+                </div>
+                <div class="card-header d-flex align-items-center" style="background-color: darkslategray; color: white">
+                    <h3 class="h4">IMEI</h3>
+                </div>
+
+
+                <div class="card-body">
+                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                       
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">IMEI </label>
+                            <div class="col-sm-5" id="mbCode">
+                                <input id="txtImei" name="txtImei" type="text" placeholder=" Scan IMEI" required="" class="form-control form-control-success">
+                            </div>
+
+
+
+                        </div>
+                        
+                        
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Dealer Name </label>
+                            <div class="col-sm-5" id="mbCode">
+                                <input id="txtDealerName" name="txtDealerName" type="text" placeholder="Dealer Name" required="" class="form-control form-control-success">
+                            </div>
+
+
+
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Dealer Code</label>
+                            <div class="col-sm-5" id="mbCode">
+                                <input id="txtDealerCode" name="txtDealerCode" type="text" placeholder=" Dealer Code " required="" class="form-control form-control-success">
+                            </div>
+
+
+
+                        </div>
+
+                       
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Dealer Address </label>
+                            <div class="col-sm-5" id="mbCode">
+                                <input id="txtDealerAddress" name="txtDealerAddress" type="text" placeholder=" Dealer Address " required="" class="form-control form-control-success">
+                            </div>
+
+
+
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Dealer City </label>
+                            <div class="col-sm-5" id="mbCode">
+                                <input id="txtDealerCity" name="txtDealerCity" type="text" placeholder=" Dealer City " required="" class="form-control form-control-success">
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-3 form-control-label">Dealer PhoneNumber </label>
+                            <div class="col-sm-5" id="mbCode">
+                                <input id="txtDealerPhoneNumber" type="text" placeholder=" Dealer PhoneNumber " required="" class="form-control form-control-success">
+                            </div>
+
+
+
+                        </div>
+
+                     
+
+
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card" id="card" style="overflow-y: auto">
+
+
+                <div class="card-body">
+                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+                        <div class="form-group row">
+
+                            <table class="table table-bordered table-hover" id="appendTable" style=" ">
+                                <thead>
+                                    <tr>
+
+
+                                        <th>Model</th>
+                                        <th>Color</th>
+                                        <th>IMEI1</th>
+                                        <th>IMEI2</th>
+
+
+                                    </tr>
+                                </thead>
+
+                                <tbody class="tbody" style="color: black"></tbody>
+
+
+                            </table>
+                         
+
+
+                            <div class="form-group row">
+                                &nbsp; &nbsp;
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+                    <div class="form-group row" style="">
+                        <label class="col-lg-10 form-control-label">&nbsp; &nbsp;</label>
+
+                        <button class="btn btn-primary" id="btnSave" style="width: 100px;"> Save</button>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<link href="~/JqueryChoosen/chosen-bootstrap.css" rel="stylesheet" />
+<link href="~/JqueryChoosen/chosen.css" rel="stylesheet" />
+<link href="~/iziToast.min.css" rel="stylesheet" />
+@*<link href="~/jquery/jquery-ui.css" rel="stylesheet"/>*@
+<link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+@*<script src="~/jquery/jquery-ui.js"></script>*@
+<script src="~/iziToast.min.js"></script>
+<script src="~/jquery/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+<script>    
+
+    $('#txtDealerName').autocomplete({
+     
+        source: "@Url.Action("GetDealerInfoDetails", "InventoryOut")",
+        minLength: 3,
+       select: function (event, ui) {
+           debugger;
+           $("#txtDealerCode").val(ui.item.code);
+           $("#txtDealerAddress").val(ui.item.Address);
+        $("#txtDealerCity").val(ui.item.City);
+        $("#txtDealerPhoneNumber").val(ui.item.phone);
+        
+
+    }
+    });
+
+
+
+
+
+
+
+
+
+
+    $("#txtImei").keyup(function() {
+        debugger;
+
+        var imei = $("#txtImei").val();
+
+        if (imei.length == 15) {
+            LoadImeiValue();
+            Clear();
+
+        }
+
+    });
+
+    function LoadImeiValue() {
+        debugger;
+        var checkImei = {};
+        checkImei.IMEI1 = $("#txtImei").val();
+
+        console.log(checkImei);
+        $.ajax({
+            url: '@Url.Action("CheckImeiNumber", "InventoryOut")', 
+            type: 'Post',
+            data: JSON.stringify({ checkImei: checkImei }),
+            dataType: 'json',
+            //async: false,
+            contentType: 'application/json',
+            
+         
+            success: function (result) {
+                debugger;
+                
+                if (result.IMEI1!=0){
+
+                debugger;
+                console.log(result);
+                
+
+           
+                var html = '';
+                $.each(result, function(key, item) {
+                    html += '<tr>';
+
+                    html += '<td>' + item.Model + '</td>';
+                    html += '<td>' + item.Color + '</td>';
+                    html += '<td>' + item.IMEI1 + '</td>';
+                    html += '<td>' + item.IMEI2 + '</td>';
+                    html += '</tr>';
+                });
+                
+                 
+                $('.tbody').append(html);
+                }
+                
+                else {
+                    alert("hi");
+
+                }
+
+              
+            },
+            error: function (request) {
+                alert(request.responseText);
+            }
+        
+        
+        });
+      
+
+    }
+
+
+
+
+    $("#btnSave").click(function() {
+        debugger;
+        var imeiNumber = [];
+
+        $('#appendTable tbody').find("tr").each(function (row, tr) {
+
+            imeiNumber.push({
+                Model: $(tr).find('td:eq(0)').text(),
+                Color: $(tr).find('td:eq(1)').text(),
+                IMEI1: $(tr).find('td:eq(2)').text(),
+                IMEI2: $(tr).find('td:eq(3)').text()
+                
+            });
+            alert(imeiNumber);
+            console.log(imeiNumber);
+        });
+
+        debugger;
+        $.ajax({
+            url: '@Url.Action("InsertInventoryOut", "InventoryOut")', 
+            type: 'Post',
+            data: JSON.stringify({ imeiNumber: imeiNumber }),
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json',
+            success: function () {
+
+                iziToast.success({
+                    timeout: 2000,
+                    imageWidth: 150,
+                    position: 'center',
+                    title: 'Success',
+                    message: 'Information Saved Successfully'
+
+                });
+
+                $("tbody").children().remove();
+            },
+        });
+
+    });
+
+
+
+    function onDelete(td) {
+        if (confirm('Are you sure to delete this record ?')) {
+            row = td.parentElement.parentElement;
+            document.getElementById("appendTable").deleteRow(row.rowIndex);
+            resetForm();
+        }
+    }
+
+    function Clear() {
+
+
+       
+        $('#txtImei').val('');
+        $("#txtImei").focus();
+    }   
+
+</script>
+
+
+
+
